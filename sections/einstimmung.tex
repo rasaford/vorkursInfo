@@ -1,0 +1,445 @@
+\documentclass[../main.tex]{subfiles}
+	\usepackage{amsmath}
+	\usepackage{amsfonts}
+	\usepackage{listings}
+
+\begin{document}
+\begin{enumerate}
+	\item Der Legende nach gewährte einst Sher Khan, der König von Indien, dem Erfinder des Schachspiels für
+	      die Erfindung dieses außergewöhnlichen Spiels die Gunst, sich seine Belohnung selbst aussuchen zu durfen.
+	      Der bescheidene (?) Erfinder verlangte lediglich ein paar Reiskörner.
+	      Und zwar sollten auf jedem Feld des Schachbrett jeweils doppelt so viele Körner,
+	      wie auf dem vorhergehenden Feld liegen (für Mathematiker:
+	      \begin{math}
+		      1 + 2 + 2^2 + 2^3 + \dots
+	      \end{math}
+	      Reiskörner). Auf wie viele Reiskörner hätte sich die Belohnung belaufen?
+
+	      Überlege Dir dazu allgemein, welche Zahlen herauskommen, wenn man die
+	      Zweierpotenzen aufsummiert. Studierende mit Nebenfach Physik schätzen
+	      bitte die Zahl der Reiskörner in Tonnen (Studierende mit Nebenfach Agrar-
+	      wissenschaften entsprechend in Doppelzentner).
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item
+		            \begin{math}
+			            \sum_{i=0}^{4} 2^i = 1 + 2 + 4 + 8 + 16 = 31 = 2^5 - 1
+		            \end{math}
+
+		            Die Summe der ersten
+		            \begin{math} n \end{math}
+		            Zweierpotenzen beträgt:
+
+		            \begin{math}
+			            \sum_{i=0}^{n} 2^i = 2^{n+1} - 1
+		            \end{math}
+
+		            Da ein Schachbrett \begin{math}
+			            64
+		            \end{math} Felder hat beträgt die Anzahl aller Reiskörner:
+
+		            \begin{math}
+			            \sum_{i=0}^{63} 2^i = 2^{64} - 1 = 18446744073709551615
+		            \end{math}
+	      \end{enumerate}
+	\item Die Papiergrößen nach DIN sind so gebaut, dass man durch Falten in der
+	      Mitte der langen Seite die nächstkleinere Größe bekommt. Also: hat man ein
+	      Papier der  Höhe \begin{math} a \end{math}
+	      und der Breite
+	      \begin{math}
+		      b
+	      \end{math}
+	      (in Hochformat, also \begin{math}
+		      a > b
+	      \end{math}),
+	      dann ist
+	      das kleinere Papier \begin{math}
+		      a
+	      \end{math} breit und \begin{math}
+		      b
+	      \end{math} hoch. Zusätzlich gilt aber bei den DIN-Größen,
+	      dass das Seitenverhältnis dabei gleich bleibt:
+	      \begin{math}
+		      a : b = b : \frac{a}{b}
+	      \end{math} Wie groß ist demnach das Seitenverhältnis
+	      \begin{math}
+		      x = \frac{a}{b}
+	      \end{math}?
+
+	      Ein Blatt DIN A0 hat die Fläche \begin{math}
+		      1 m^2
+	      \end{math}
+	      Wie hoch und wie breit ist es?
+	      Wie hoch und wie breit ist ein Blatt DIN A4?
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item Das Seitenverhältnis beträgt:
+
+		            \begin{math}
+			            x = \frac{a}{b}
+			            = \frac{b}{
+				            \frac{a}{2}
+			            }
+			            = \frac{2b}{a}
+		            \end{math}
+
+		            Somit gilt:
+
+		            \begin{math}
+			            \frac{a}{b} = \frac{2b}{a}
+		            \end{math}
+		            \(|\)
+		            \begin{math}
+			            \cdot a
+		            \end{math}
+		            \(|\)
+		            \begin{math}
+			            \cdot b
+		            \end{math}
+
+		            \begin{math}
+			            \frac{a^2}{b^2} = 2
+		            \end{math}
+		            \(|\)
+		            \begin{math}
+			            \sqrt{}
+		            \end{math}
+
+		            \begin{math}
+			            \frac{a}{b}
+			            = \sqrt{2}
+			            = x
+			            \approx 1,41
+		            \end{math}
+
+		            Somit können die Seitenlängen des Din A0 Blattes folgenermaßen
+		            errechnet werden:
+
+		            \begin{math}
+			            1 m^2
+			            = (b) \cdot (\sqrt{2} \cdot b)
+		            \end{math}
+
+		            \begin{math}
+			            b = \sqrt{
+				            \frac{1}{\sqrt{2}} m^2
+			            }
+			            \approx 0.841 m
+		            \end{math}
+
+		            \begin{math}
+			            a = \sqrt{2} \cdot b
+			            \approx 1,1891 m
+		            \end{math}
+
+		            Es gilt:
+
+		            \begin{math}
+			            a_{neu} = b_{alt}
+		            \end{math}
+
+		            \begin{math}
+			            b_{neu} = \frac{ \sqrt{2} \cdot a_{neu}}{ 2 }
+		            \end{math}
+
+		            Somit können jetzt alle Maße der verschiedenen DIN Größen berechnet werden:
+
+		            \begin{math}
+			            \begin{array}{cccccc}
+				              & A0       & A1      & A2       & A3       & A4       \\
+				            \hline
+				            a & 1.1891 m & 0.841 m & 0.595 m  & 0.4205 m & 0.2975 m \\
+				            b & 0.841 m  & 0.595 m & 0.4205 m & 0.2975 m & 0.2103 m \\
+			            \end{array}
+		            \end{math}
+	      \end{enumerate}
+	\item Viel Schöner würden die Papiergrößen nach dem so genannten "goldenen Schnitt“ ausschauen.
+	      Dazu muss sich \begin{math}
+		      a : b
+	      \end{math} verhalten wie \begin{math}
+		      b : (a - b)
+	      \end{math}. Berechne wieder das Seitenverhältnis \begin{math}
+		      x = \frac{a}{b}
+	      \end{math}. Wer eine Schere dabei hat,
+	      kann anschließend Wahrheitswert des ersten Satzes überprüfen.
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item Das Seitenverhältnis lässt sich auch schreiben als:
+
+		            \begin{math}
+			            x
+			            = \frac{a}{b}
+			            = \frac{b}{a-b}
+		            \end{math}
+
+		            \begin{math}
+			            \frac{b}{a}
+			            = \frac{a-b}{b}
+		            \end{math}
+
+		            \begin{math}
+			            \frac{1}{x}
+			            = \frac{a}{b} - \frac{b}{b}
+		            \end{math}
+
+		            \begin{math}
+			            \frac{1}{x}
+			            = x - 1
+		            \end{math}
+		            \(|\) \begin{math}
+			            \cdot x
+		            \end{math}
+
+		            \begin{math}
+			            1
+			            = x^2 - x
+		            \end{math}
+		            \(|\) \begin{math}
+			            -1
+		            \end{math}
+
+		            \begin{math}
+			            0 = x^2 - x - 1
+		            \end{math}
+
+		            Von diesem Polynom können dann die Nullstellen bestimmt werden, um den goldenen Schnitt zu erhalten:
+
+		            \begin{math}
+			            x_{1,2} = \frac{1}{2} \pm \sqrt{
+				            \frac{1}{4} + 1
+			            }
+		            \end{math}
+
+		            \begin{math}
+			            x_1 = \frac{1 - \sqrt{5}}{2} \lor
+			            x_2 = \frac{1 + \sqrt{5}}{2} = \varphi
+		            \end{math}
+	      \end{enumerate}
+	\item Interessant sind die Koeffizienten, die herauskommen, wenn man die Terme \begin{math}
+		      (x + 1)^n
+	      \end{math} ausmultipliziert (also z.B. \begin{math}
+		      (x + 1)^2 = x^2 + 2x + 1
+	      \end{math}).
+	      Berechne dies für die ersten paar \begin{math}
+		      n
+	      \end{math} und überlege, nach welchem Gesetz die Koeffizienten gebildet werden.
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item Beim ausmultiplizieren der einzelnen Terme sind die Dreieckszahlen in den Koeffizienten erkennbar.
+
+		            \begin{math}
+			            (x + 1)^2 = 1 \cdot x^2 + 2 \cdot x + 1 \cdot 1
+		            \end{math}
+
+		            \begin{math}
+			            (x + 1)^3 = 1 \cdot x^3 + 3 \cdot x^2 + 3 \cdot x + 1 \cdot 1
+		            \end{math}
+
+		            Somit kann ein solcher Therm mit einer beliebigen Potenz folgendermaßen dargestellt werden:
+
+		            \begin{math}
+			            (x + 1)^n = \sum_{i = 0}^{n} \binom{n}{i} \cdot x^{n-i} \cdot 1^i
+		            \end{math}
+
+		            Diese Formel lässt sich auf einen beliegen Therm mit den Variablen \begin{math}
+			            a, b
+		            \end{math} verallgemeinern.
+
+		            \begin{math}
+			            (a + b)^n = \sum_{i = 0}^{n} \binom{n}{i} \cdot a^{n-i} \cdot b^i
+		            \end{math}
+	      \end{enumerate}
+	\item Ein Vater ist heute \begin{math}
+		      a
+	      \end{math} Jahre älter als sein Sohn.
+	      In \begin{math}
+		      b
+	      \end{math} Jahren wird er \begin{math}
+		      c
+	      \end{math} Jahre älter als \begin{math}
+		      d
+	      \end{math}-mal so alt sein wie sein Sohn heute.
+	      Wie alt sind Vater und Sohn gegenwärtig?
+
+	      Führen alle Parameterwerte \begin{math}
+		      a, b, c, d
+	      \end{math} zu einer Lösung?
+	      Welche davon sind sinnvoll?
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item
+		            \begin{math}
+			            v :=
+		            \end{math} Alter des Vaters heute,
+		            \begin{math}
+			            s :=
+		            \end{math} Alter des Sohns heute
+
+		            Aus dem Text erhält man:
+
+		            \begin{math}
+			            v = s + a
+		            \end{math}
+
+		            \begin{math}
+			            c = (v + b) - d \cdot s
+		            \end{math}
+		            Einsetzen und vereinfachen:
+
+		            \begin{math}
+			            c = s + a + b - d \cdot s
+		            \end{math}
+		            \(|\)\begin{math}
+			            - a
+		            \end{math}
+		            \(|\)\begin{math}
+			            - b
+		            \end{math}
+
+		            \begin{math}
+			            c - a - b = s - d \cdot s
+		            \end{math}
+
+		            \begin{math}
+			            c - a - b = s \cdot (1 - d)
+		            \end{math}
+		            \(|\)\begin{math}
+			            \div (1-d)
+		            \end{math}
+
+		            \begin{math}
+			            s = \frac{c - a - b}{1-d}
+		            \end{math} für \begin{math}
+			            d \neq 1
+		            \end{math}
+
+		            \begin{math}
+			            v = s + a = \frac{c - a - b}{1-d} + a = \frac{c - b - a \cdot d}{1 - d}
+		            \end{math}
+	      \end{enumerate}
+	\item Der Chinese Xu Yue stellte gegen 190 n. Chr. das folgende Problem:
+	      Wie viele Hähne, Hennen und Küken kann man für 100 Münzen kaufen,
+	      wenn man insgesamt 100 Tiere haben will und ein Hahn 5 Münzen,
+	      eine Henne 4 Münzen und 4 Küken eine Münze kosten?
+	      Die 100 Münzen sollen dabei vollständig verbraucht werden.
+
+	      Lösung:
+	      \begin{enumerate}
+			  \item 
+			 \begin{math}
+				 a := 
+			 \end{math} Hahn, 
+			 \begin{math}
+				 b := 
+			 \end{math} Henne,
+			 \begin{math}
+				 c := 
+			 \end{math} Küken
+
+			  Da man insgesamt genau 100 Tiere haben möchte, muss gelten:
+					
+		            \begin{math}
+			            1 \cdot a + 1 \cdot b + 1 \cdot c = 100
+		            \end{math}
+
+		            Dazu sollen genau 100 Münzen verbraucht werden, somit muss außerdem gelten:
+
+		            \begin{math}
+			            5 \cdot a + 4 \cdot b + \frac{c}{4} = 100
+		            \end{math}
+
+		            Diese zwei Gleichungen können in ein lineares Gleichungssystem geschrieben werden.
+		            Da dies aber 3 Variablen mit nur 2 Gleichungen besitzt ist es nicht eindeutig lösbar.
+
+		            \begin{math}
+			            \begin{array}{ccc|c}
+				            5 & 4 & 4 & 100 \\
+				            1 & 1 & 1 & 100 \\
+			            \end{array}
+			            \rightarrow
+			            \begin{array}{ccc|c}
+				            19 & 15 & 0 & 300 \\
+				            1  & 1  & 1 & 100 \\
+			            \end{array}
+		            \end{math}
+
+		            \begin{math}
+			            b = \frac{300 - 19a}{15}
+			            = 20 - \frac{19a}{15}
+		            \end{math}
+
+		            \begin{math}
+						c = - a - b + 100
+						= - a - (20 - \frac{19a}{15}) + 100 = \frac{4a}{15} + 80
+					\end{math}
+					
+					Ganzzahlige Lösungen für diese beiden Gleichungen sind somit:
+
+					\begin{math}
+						a = 15 \cdot n 
+					\end{math} \begin{math}
+						n \in \mathbb{Z}
+					\end{math}
+
+		            \begin{math}
+			            b = 20 - 19n
+		            \end{math}
+					
+					\begin{math}
+			            c = 80 + 4n
+		            \end{math}
+	      \end{enumerate}
+	\item Eine Gruppe von Menschen heißt \textit{halbzerstritten},
+	      wenn für zwei beliebig herausgegriffene Gruppenmitglieder \begin{math}
+		      a
+	      \end{math} und \begin{math}
+		      b
+	      \end{math} immer gilt:
+	      \textit{Entweder} redet \begin{math}
+		      a
+	      \end{math} mit \begin{math}
+		      b
+	      \end{math} oder \begin{math}
+		      b
+	      \end{math} redet mit \begin{math}
+		      a
+	      \end{math}.
+	      Es gibt also weder Paare, bei denen Kommunikation in beide Richtungen möglich ist,
+	      noch solche, bei denen Kommunikation in keine Richtung funktioniert.
+
+	      Um in einer halbzerstrittenen Gruppe Nachrichten weiterzuleiten, wäre es hilfreich,
+	      wenn man eine Kontaktperson \begin{math}
+		      x
+	      \end{math} hat, die mit jeder andereren Person über höchstens eine Zwischenstation redet -
+	      also für jedes \begin{math}
+		      a \neq x
+	      \end{math} gilt,
+	      dass \begin{math}
+		      x
+	      \end{math} mit \begin{math}
+		      a
+	      \end{math} redet oder es zumindest ein \begin{math}
+		      b
+	      \end{math} gibt, so dass \begin{math}
+		      x
+	      \end{math} mit \begin{math}
+		      b
+	      \end{math} und \begin{math}
+		      b
+	      \end{math} mit \begin{math}
+		      a
+	      \end{math} redet.
+
+	      Gibt es eine solche Kontaktperson in jeder halbzerstrittenen Gruppe?
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item
+	      \end{enumerate}
+\end{enumerate}
+\end{document}
