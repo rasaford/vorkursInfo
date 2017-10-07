@@ -1,30 +1,23 @@
 \documentclass[../main.tex]{subfiles}
     \usepackage{amsmath}
     \usepackage{listings}
+    \usepackage{amsfonts}
     
 \begin{document}
 \begin{enumerate}
-	\item Skizziere den Graph der Funktion \(
-	      x \mapsto ld x
-	      \) für \(
-	      x = 2^{-1000} \dots 1000
-	      \).
+	\item Skizziere den Graph der Funktion \( x \mapsto \log_2 x \) für \( x = 2^{-1000} \dots 1000 \).
 
 	      Lösung:
 	      \begin{enumerate}
 		      \item
 	      \end{enumerate}
-	\item Bestimme für beliebiges positives \(
-	      b \neq 1
-	      \) folgende Werte: \(
-	      log_b 1
-	      \) und \(
-	      log_b b
-	      \).
+	\item Bestimme für beliebiges positives \( b \neq 1 \) folgende Werte:
+	      \( \log_b 1 \) und \( \log_b b \).
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \log_b 1 = 0 \)
+		      \item \( \log_b b = 1 \)
 	      \end{enumerate}
 	\item Finde mit den Rechenregeln für Potenzen und Logarithmen eine Rechenregel für \(
 	      log_b \sqrt[n]{x}
@@ -32,96 +25,137 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \log_b \sqrt[n]{x} = \log_b x^{\frac{1}{n}} = \frac{1}{n} \cdot \log_b x\)
 	      \end{enumerate}
-	\item Vereinfache folgende Ausdrücke (\(
-	      b, c, x
-	      \) und \(
-	      y
-	      \) seien positiv mit \(
-	      b,c \neq 1
-	      \)):
+	\item Vereinfache folgende Ausdrücke (\( b, c, x \) und \( y \)
+	      seien positiv mit \( b,c \neq 1 \)):
 	      \begin{align*}
-		      b^{x + log_b y},
-		      \Big( \sqrt{b} \Big)^{log_b x},
-		      log_c \Big( x^{ \frac{1}{log_c b}} \Big),
+		      b^{x + \log_b y},
+		      \Big( \sqrt{b} \Big)^{\log_b x},
+		      \log_c \Big( x^{ \frac{1}{\log_c b}} \Big),
 	      \end{align*}
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \(  b^{x + \log_b y}
+		            = b^x \cdot b^{\log_b y}
+		            = b^x \cdot y \)
+		      \item \( \Big( \sqrt{b} \Big)^{\log_b x}
+		            = b^{\frac{ \log_b x }{ 2 }}
+		            = b^{\log_b x} \cdot b^{\frac{1}{2}}
+		            = x \cdot \sqrt{b} \)
+		      \item \( \log_c \Big( x^{ \frac{1}{\log_c b}} \Big)
+		            = \frac{1}{\log_c b} \cdot \log_c x
+		            = \frac{ \log_c x}{ \log_c b} \)
 	      \end{enumerate}
-	\item Vereinfache (es sei \(
-	      x > y > 0
-	      \))
-	      \begin{align*}
-		      ln(x^2 - y^2) - ln(x - y)
-	      \end{align*}
+	\item Vereinfache (es sei \( x > y > 0 \))
+	      \[  \ln(x^2 - y^2) - \ln(x - y)\]
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \ln(x^2 - y^2) - \ln(x - y) \)
+
+		            \( = \ln((x + y)(x - y)) - \ln(x - y) \)
+
+		            \( = \ln(x + y) + \ln(x - y) - \ln(x - y)
+		            = \ln (x + y) \)
 	      \end{enumerate}
-	\item Wenn für Abszisse (vulgo ”\(
-	      x
-	      \)-Achse“) und Ordinate logarithmische Maßstäbe verwendet werden —
-	      wie sehen dann die Graphen von Potenzfunktionen \(
-	      x \mapsto x^n
-	      \) aus?
+	\item Wenn für Abszisse (vulgo ”\( x \)-Achse“) und Ordinate logarithmische
+	      Maßstäbe verwendet werden —
+	      wie sehen dann die Graphen von Potenzfunktionen \( x \mapsto x^n \) aus?
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Die Graphen sind eine Gerade.
 	      \end{enumerate}
 	\item Jaja, ich weiß schon, dass die allermeisten von Ihnen nicht vorhaben, jemals auf einem Rechenschieber zu rechnen.
 	      Zum Logarithmen-Üben ist das Ding (bzw. eine Vorstellung davon) aber immer noch praktisch!
 	      Manchmal wollen auch Informatiker die Länge der Diagonale eines Quadrats berechnen — markiere dazu auf dem
-	      Informatiker-Rechenschieber den Wert \(
-	      \sqrt{2}
-	      \).
+	      Informatiker-Rechenschieber den Wert \( \sqrt{2} \).
 
 	      Markiere nun noch denjenigen Wert, mit dem man die Kantenlänge eines Würfels multiplizieren muss,
 	      um die Kantenlänge eines Würfels mit doppeltem Volumen zu erhalten.
 
 	      Wie kann man mit unserem Rechenschieber — ohne die Skalen zu verlängern —
-	      den Wert von \(
-	      8 \cdot 512
-	      \) ablesen?
+	      den Wert von \( 8 \cdot 512 \) ablesen?
 	      (Tipp: am echten Rechenschieber heißt diese Technik Durchschieben. Bei unserm Modell ist ggf.
-	      mal wieder die Näherung \(
-	      2^{10} \approx 1000
-	      \) hilfreich.)
+	      mal wieder die Näherung \( 2^{10} \approx 1000 \) hilfreich.)
 
 	      Lösung:
 	      \begin{enumerate}
 		      \item
 	      \end{enumerate}
-	\item In wieviel Jahren hat sich eine mit einen Zinssatz von \(
-	      p\%
-	      \)im Jahr verzinste Geldanlage (incl. Zinseszins) verdoppelt?
-	      Berechne diese Dauer für \(
-	      p = 1,2,3,4
-	      \) und \(
-	      10
-	      \) und vergleiche die Ergebnisse mit der Faustregel ”\(
-	      70
-	      \) Jahre geteilt durch Zinssatz“.
+	\item In wieviel Jahren hat sich eine mit einen Zinssatz von \( p\% \)
+	      im Jahr verzinste Geldanlage (incl. Zinseszins) verdoppelt?
+	      Berechne diese Dauer für \( p = 1,2,3,4 \) und \( 10 \) und
+	      vergleiche die Ergebnisse mit der Faustregel ”\( 70 \) Jahre geteilt durch
+	      Zinssatz“.
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Die Geldanlage hat nach einer Verzsinung den Wert:
+
+		            \( x_{neu} = x_{alt} + x_{alt} \cdot \frac{p}{100}  \)
+
+		            Nach einer weiteren Verzinsung hat sie den Wert:
+
+		            \(  ( x_{alt} + x_{alt} \cdot \frac{p}{100} ) + ( x_{alt} + x_{alt} \cdot \frac{p}{100} ) \cdot \frac{p}{100}\)
+
+		            \( =  ( x_{alt} + x_{alt} \cdot \frac{p}{100} ) \cdot ( 1+ \frac{p}{100}) \)
+
+		            \( = x_{alt} (1 + \frac{p}{100}) (1 + \frac{p}{100}) \)
+
+		            \( = x_{alt} (1+ \frac{p}{100})^2 \)
+
+		            Diese Formel lässt sich für beliebige Verzinsungen verallgemeinern
+		            \[ x_{alt} \Big(1 + \frac{p}{100} \Big)^n \]
+
+		            Nun kann man berechnen, wie lange es dauert, bis sich das Startkapital verdoppelt hat.
+
+		            \( 2 \cdot x_{alt} = x_{alt} \Big(1 + \frac{p}{100} \Big)^n \) \( | \div x_{alt} | \ln() \)
+
+		            \( \ln 2 = n \cdot \ln(1 + \frac{p}{100}) \) \( | \div \ln (1 +\frac{p}{100}) \)
+
+		            \( n = \frac{\ln 2}{\ln (1 + \frac{p}{100})} \)
+
+		            Durch Einsetzen von Werten für \( p \) kann die benötigte Anzahl an Jahren errechnet werden,
+		            bis sich das Startkapital verdoppelt hat.
+
+		            In der zweiten Zeile der Tabelle ist zum Vergleich das
+		            Ergebnis laut der Faustregel angegeben.
+		            \[
+			            \begin{array}{c|ccccc}
+				            p          & 1     & 2  & 3     & 4     & 10   \\
+				            \hline
+				            Formel     & 69.66 & 35 & 23.45 & 17.67 & 7.27 \\
+				            Faustregel & 70    & 35 & 23.33 & 17.5  & 7    \\
+			            \end{array}
+		            \]
 	      \end{enumerate}
-	\item Zeige, dass \(
-	      ld 10
-	      \) keine rationale Zahl ist (es gibt keine ganzen Zahlen \(
-	      x , y
-	      \) mit \(
-	      ld 10 = x / y
-	      \)).
+	\item Zeige, dass \( ld 10 \) keine rationale Zahl ist
+	      (es gibt keine ganzen Zahlen \( x , y \) mit \( ld 10 = x / y \)).
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Es wird ein Widerspruchsbeweis verwedet, bei dem davon ausgegangen wird,
+		            dass die zu widerlegende Annahme wahr ist. Falls dann durch logische Schlüsse ein
+		            Widerspruch hergeieltet werden kann muss die Annahme falsch sein, wodurch die zu
+				beweisende Bedingung bewiesen ist.
+				
+				Annahme: Es gibt ganze Zahlen \( x,y \in \mathbb{Z} \), für die gilt:
+				\( ld 10 = \frac{x}{y} \)
+
+				\( ld 10 = \frac{x}{y} \) \( | 2^x \)
+
+				\( 10 = 2^\frac{x}{y} \) \( | x^y \)
+
+				\( 10^y = 2^x \)
+
+				Dies is umöglich, solange \( x, y \neq 0 \), was ausgeschlossen werden kann, da sonst
+				\( ld 10 = 1 \).
+
+				Somit ist \( 10^y \neq 2^x \) für alle ganzen Zahlen \( x,y \). Damit ist die
+				Annahme, dass \( ld 10 =  x / y  \) widerlegt, wodurch \( ld 10  \) irrational ist.
 	      \end{enumerate}
 \end{enumerate}
 \end{document}
