@@ -1,7 +1,129 @@
 \documentclass[../main.tex]{subfiles}
     \usepackage{amsmath}
     \usepackage{listings}
+    \usepackage{amsfonts}
     
-    \begin{document}
-    write something here
-    \end{document}
+\begin{document}
+\begin{enumerate}
+	\item Berechne die ersten Partialsummen der Reihe mit Gliedern \( s_n = \frac{9}{10^n} \) und
+          bestimme deren kleinste obere Schranke. 
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item Gib eine Bedingung an die Reihenglieder \( s_k \) an, wann eine Reihe \( f_n = \sum s_k \)
+	      streng monoton wachsend bzw. fallend ist (im Fall einer Reihe beziehen sich
+	      Attribute wie ”monoton wachsend“ auf die Partialsummen, nicht auf die
+	      Reihenglieder).
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item Zeige für \( 0 < x < 1  \) ist die \textit{geometrische Reihe}
+	      \[ f_n := \sum_{k = 0}^{n} x^k \]
+
+	      beschränkt und monoton, mithin konvergent. Was ist der Grenzwert der Reihe?
+	      (Tipp: Die Summe kennen wir schon\dots )
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item Zeige, dass die harmonische Reihe mit Reihengliedern \( s_n := \frac{1}{n} \) keine obere
+	      Schranke besitzt (die Partialsummen also beliebig groß werden).
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item Zeige, dass eine Folge höchstens einen Grenzwert besitzen kann!
+	      Nimm dazu an, es gebe \( y_1 \neq y_2 \), die beide die Grenzwertbedingung erfüllen und
+	      führe das zum Widerspruch durch Angabe eines \( \epsilon \), mit dem die weitere Bedingung
+	      unmöglich erfüllt sein kann.
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item Ein Mann spaziert mit seinem Hund von seinem Haus zu einer Kneipe. Die
+	      Entfernung zwischen Haus und Kneipe sei \( s \). Der Mann gehe dabei mit der
+	      Geschwindigkeit \( v \). Dies ist dem Hund jedoch zu langweilig. Er läuft deswegen
+	      doppelt so schnell zwischen der Kneipe und seinem Herrchen hin und her.
+	      Das heißt, er startet am Haus zusammen mit seinem Herrchen, dreht um,
+	      sobald er das Ziel erreicht, stoppt, wenn er wieder auf sein Herrchen trifft,
+	      läuft dann wieder zur Kneipe,\dots
+
+	      Berechne, welchen Weg der Hund zurücklegt, bis Herrchen und Hund gemeinsam die Kneipe erreichen.
+	      Es gibt einen so genannten ”Mathematiker-Weg“ und einen so genannten
+	      ”Physiker-Weg“. Versuche, beide zu finden.
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item  In Aufgabe \( 2.7 \) haben wir die Länge der Kochkurve zu berechnet, was uns auf
+	      eine Folge \( (l_n) \) von Zahlen führt. Ebenso kann man die Fläche \( (a_n) \) unter der
+	      Kochkurve berechnen, indem man die Flächen der Dreiecke aufaddiert, die
+	      Schritt fur Schritt auf die Kurve ”draufgesetzt“ werden.
+	      Sind diese Folgen jeweils beschränkt und/oder monoton?
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item Gib Folgen \( (a_n) \), \( (b_n) \) an mit \( \lim_{n \to \infty}(a_n) = \infty \),
+	      \( \lim_{n \to \infty}(b_n) = \infty \) sowie:
+	      \begin{enumerate}
+		      \item \( \lim(a_n - b_n) = 0 \)
+		      \item \( \lim(a_n - b_n) = + \infty \)
+		      \item \( \lim( \frac{a_n}{b_n}) = 0 \)
+	      \end{enumerate}
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item \( O \)- Notation: zeig, dass gilt:
+	      \begin{enumerate}
+		      \item \( 6n^4  \in O(3n^4) \)
+		      \item \( 16n^3 \in O(2^n) \)
+		      \item \( n^2 \notin O(n) \)
+	      \end{enumerate}
+	      Gib im Fall von "`\( \in \)"' ein entsprechendes \( n_0 \) an, so dass Bedingung
+	      (8.1) erfüllt ist.
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item Bestmme alle Häufungspunkte und den größten Häufungspunkt von
+	      \[ a_n = \sin \Big( \frac{\pi}{4}n \Big) \]
+	      (Benutze dabei die Gleichheit \( \sin( \pi / 4 ) = \sqrt{2} / 2 \)).
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+	\item Prüfe jeweils auf Konvergenz und bestimme ggf. den Grenzwert.
+
+	      Hinweis: Wenn \( \lim_{n \to \infty} a_n = \alpha \) und
+	      \( \lim_{n \to \infty} b_n = \beta \) dann ist
+	      \( \lim_{n \to \infty} (a_n + b_n) = \alpha + \beta \).
+
+	      Ebenfalls gilt: \( \lim_{n \to \infty} (a_n \cdot b_n) = \alpha \cdot \beta \) und
+	      - wenn \( \beta \)  und alle \( b_n \neq 0 \) sind -
+	      \( \lim_{n \to \infty }(a_n / b_n) = \alpha / \beta \)
+	      \begin{enumerate}
+		      \item \( a_n = \frac{ 3n +2(-1)^n }{ n } \)
+		      \item \( b_n = \frac{ nx^n }{ nx^n + 1 } \)
+		            \( x \in \mathbb{R}, x > 1 \)
+	      \end{enumerate}
+          
+          Lösung:
+          \begin{enumerate}
+              \item 
+          \end{enumerate}
+\end{enumerate}
+\end{document}
