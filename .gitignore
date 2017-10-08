@@ -1,3 +1,5 @@
+.vscode
+
 *.DS_Store
 
 # All these files are genertated by some parts of the latex toolchain. They are not necessary for compiling the .tex files
