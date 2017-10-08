@@ -1,5 +1,6 @@
 \documentclass[../main.tex]{subfiles}
-\usepackage{amsmath}
+\usepackage{amsmath} 
+\usepackage{multicol}
 \usepackage{listings}
 
 \begin{document}
@@ -10,21 +11,84 @@
 	      nützlich Gib damit Näherungen für \( 2^{32} \) und \( 2^{64} \) an.
 
 	      Lösung:
-	      \begin{enumerate}
-		      \item
-	      \end{enumerate}
+	      \begin{multicols}{3}
+		      \begin{enumerate}
+			      \item \( 2^0 = 1 \)
+			      \item \( 2^1 = 2 \)
+			      \item \( 2^2 = 4 \)
+			      \item \( 2^3 = 8 \)
+			      \item \( 2^4 = 16 \)
+			      \item \( 2^5 = 32 \)
+			      \item \( 2^6 = 64 \)
+			      \item \( 2^7 = 128 \)
+			      \item \( 2^8 =  256 \)
+			      \item \( 2^9 = 512 \)
+			      \item \( 2^{10} = 1024 \)
+			      \item \( 2^{11} = 2048 \)
+			      \item \( 2^{12} = 4096 \)
+			      \item \( 2^{12} = 8192 \)
+			      \item \( 2^{13} = 16384 \)
+			      \item \( 2^{14} = 32767 \)
+			      \item \( 2^{15} = 65535 \)
+			      \item \( 2^{16} = 131071 \)
+			      \item \( 2^{17} = 262143 \)
+			      \item \( 2^{18} = 524287 \)
+			      \item \( 2^{19} = 1 048 575 \)
+			      \item \( 2^{20} = 2 097 151 \)
+		      \end{enumerate}
+	      \end{multicols}
 	\item Gegeben sind die Funktionen \( f(x) = 6 \cdot x^2 \) und \( g(x) = 2 \cdot x^3 \).
 	      \begin{enumerate}
 		      \item Skizziere beide Graphen.
 		      \item Für welche \( x \) ist \( f(x) = g(x) \)?
 		            Für welche ist \( f(x) > g(x) \) und für welche \( f(x) < g(x) \)?
 	      \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item
+		      \item Schnittpunkte der beiden Funktionen durch Berechnen
+		            der Nullstellen von \( f(x) = g(x) \)
+
+		            \( 6x^2 = 2^3 \)
+
+		            \( x_{1,2} = 0 \lor x_3 = 3 \)
+
+		            Durch Einsetzen von Werten um die Nullstellen der Funktion kann man die größere der
+		            beiden bestimmen.
+
+		            \( f(2.5) = 37.5 \)
+
+		            \( g(2.5) = 31.25\)
+
+		            Somit gilt:
+
+		            Für \( -\infty \leq x \leq 3 \) ist \( f(x) \geq g(x) \)
+
+		            Für \( 3 < x \leq \infty \) ist \( g(x) \geq f(x) \)
+	      \end{enumerate}
 	\item Für welche ganzen Zahlen \( n \) ist \( 2^n > n^2 \)?
 	      (Probieren ist hier besser als rechnen!)
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Durch einsetzen von Werten in die Funktionen können die Schnittpunkte bestimmt werden
+
+		            \[ \begin{array}{c|cccccccc}
+				                & -1    & 0 & 1 & 2 & 3 & 4  & 5  & 6  \\
+				            \hline
+				            2^n & 1 / 2 & 1 & 2 & 4 & 8 & 16 & 32 & 64 \\
+				            n^2 & 1     & 0 & 1 & 4 & 9 & 16 & 25 & 36 \\
+			            \end{array} \]
+
+		            Für \( -\infty \leq x \leq 0 : n^2 > 2^n \)
+
+		            Für \( 0 < x \leq 2 : 2^n > n^2 \)
+
+		            Für \( 2 < x \leq 4 : n^2 > 2^n \)
+
+		            Für \( 4 < x \leq \infty : 2^n > n^2 \)
+
 	      \end{enumerate}
 	\item \begin{enumerate}
 		      \item Skizziere den Graph der Funktion \( x \mapsto 2^x \) für \(Rx = -1000 \dots 10 \)
@@ -39,72 +103,76 @@
 	      Lösung:
 	      \begin{enumerate}
 		      \item
+		      \item \( 2^n \geq 16x^3 \)
+
+		            \( 2^n \geq 2^4x^3 \) \( | \div 2^4 \)
+
+		            \( 2^{n-4} \geq x^3 \)
+
+		            \[ \begin{array}{c|ccc}
+				            x         & 15   & 16   & 17   \\
+				            \hline
+				            2^{x - 4} & 2048 & 4096 & 8192 \\
+				            x^3       & 3375 & 4096 & 4913 \\
+			            \end{array} \]
+
+		            Die kleinse Zahl, sodass \( 2^x \geq 16x^3 \) ist \( 16 \).
+		      \item
 	      \end{enumerate}
-	\item Wie viele verschiedene Zustände kann man mit \(
-	      n
-	      \) Bits darstellen?
+	\item Wie viele verschiedene Zustände kann man mit \( n \) Bits darstellen?
 	      Speziell: wenn wir ganze Zahlen (bei 0 beginnend) in 32 Bit speichern,
 	      wie weit können wir damit zählen?
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item In \( n  \) bits können \( 2^n \) Werte dargestellt werden.
+		            Somit kann bis \( 2^n - 1 \) gezählt werden.
 	      \end{enumerate}
 	\item
-	      Vereinfache folgende Therme (dabei seien \(
-	      x, y, z > 0
-	      \)):
+	      Vereinfache folgende Therme (dabei seien \( x, y, z > 0 \)):
 	      \begin{enumerate}
-		      \item \(
-		            \sqrt[5]{2^{15}}
-		            \)
-		      \item \(
-		            (\frac{8}{125})^{-\frac{1}{3}}
-		            \)
-		      \item \(
-		            \sqrt{\sqrt[3]{x}}
-		            \)
-		      \item \(
-		            (\sqrt[3]{x} \cdot \sqrt{y^3})^6
-		            \)
-		      \item \(
-		            \frac{(x^2 \cdot y^3 z^4)^2}{
+		      \item \( \sqrt[5]{2^{15}} \)
+		      \item \( (\frac{8}{125})^{-\frac{1}{3}} \)
+		      \item \( \sqrt{\sqrt[3]{x}} \)
+		      \item \( (\sqrt[3]{x} \cdot \sqrt{y^3})^6 \)
+		      \item \( \frac{(x^2 \cdot y^3 z^4)^2}{
 			            (x \cdot y \cdot z)^{-2}
-		            }
-		            \)
-		      \item \(
-		            \frac{x - y}{ \sqrt{x} - \sqrt{y} }
-		            \)
+		            } \)
+		      \item \( \frac{x - y}{ \sqrt{x} - \sqrt{y} } \)
 	      \end{enumerate}
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item \(
-		            \sqrt[5]{2^{15}}
-		            =
+		      \item \( \sqrt[5]{2^{15}}
+			            = 2^{15/5} = 2^3 = 8
 		            \)
-		      \item \(
-		            (\frac{8}{125})^{-\frac{1}{3}}
-		            =
+		      \item \( (\frac{8}{125})^{-\frac{1}{3}}
+		            = \frac{1}{ (\frac{8}{125})^{ \frac{1}{3} }}
+		            = \frac{1}{ \sqrt[3]{ \frac{8}{125} }}
+		            = \frac{1}{ \frac{2}{5}}
+		            = \frac{5}{2}
+		            = 2.5
 		            \)
-		      \item \(
-		            \sqrt{\sqrt[3]{x}}
-		            =
+		      \item \( \sqrt{\sqrt[3]{x}}
+		            = \Big( x^{ \frac{1}{3} } \Big)^{ \frac{1}{2} }
+		            = x^{ \frac{1}{6}}
+		            = \sqrt[6]{x}
 		            \)
-		      \item \(
-		            (\sqrt[3]{x} \cdot \sqrt{y^3})^6
-		            =
+		      \item \( (\sqrt[3]{x} \cdot \sqrt{y^3})^6
+		            = x^{ \frac{1}{3} \cdot 6} \cdot y^{ \frac{3}{2} \cdot 6 }
+		            = x^2 \cdot y^9
 		            \)
-		      \item \(
-		            \frac{(x^2 \cdot y^3 z^4)^2}{
+		      \item \( \frac{(x^2 \cdot y^3 z^4)^2}{
 			            (x \cdot y \cdot z)^{-2}
 		            }
-		            =
+		            = (x^2 \cdot y^3 \cdot z^4)^2 \cdot (xyz)^2
+		            = (x^3y^4z^5)^2
+		            = x^6y^8z^{10}
 		            \)
-		      \item \(
-		            \frac{x - y}{ \sqrt{x} - \sqrt{y} }
-		            =
-		            \)
+		      \item \( \frac{x - y}{ \sqrt{x} - \sqrt{y} }
+		            = \frac{ (\sqrt{x} + \sqrt{y})(\sqrt{x} - \sqrt{y}) }{
+			            \sqrt{x} - \sqrt{y}}
+		            = \sqrt{x} + \sqrt{y} \)
 	      \end{enumerate}
 	\item Um eine Koch-Kurve zu konstruieren, beginnen wir mit einer Strecke der Länge 1 und
 	      ersetzen nun in jeder Runde jede bis dahin erzeugte Strecke durch vier Teilstrecken von je einem Drittel
@@ -117,102 +185,181 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Die Länge bei den aufeinander folgenden Iterationen beträgt:
+
+		            \(  l_0 = 1 \)
+
+		            \( l_1 = 4 \cdot \frac{1}{3} l_0 \)
+
+		            \( l_2 = 4 \cdot \frac{1}{3} (4 \cdot \frac{1}{3} l_0 )
+		            =  \frac{4}{3} \cdot \frac{4}{3} l_0
+		            = ( \frac{4}{3} )^2 l_0 \)
+
+		            Somit kann die Länge der Kurve bei Iteation \( n \) durch
+		            \( ( \frac{4}{3})^n \) berechnet werden.
+
+		            Somit ist die Länge der Kurve nicht begrenzt.
+		            \[ \lim_{n \to \infty} \Big( \frac{4}{3} \Big)^n = \infty  \]
 	      \end{enumerate}
 	\item Lineare Gleichungen - bestimme für die folgenden Gleichungen jeweils alle
-	      \(
-	      x
-	      \), die die Gleichung erfüllen:
+	      \( x \), die die Gleichung erfüllen:
 	      \begin{enumerate}
-		      \item \(
-		            4 \cdot ( x - 1)
+		      \item \( 4 \cdot ( x - 1)
 		            = 5 \cdot (x - 2)
 		            \)
-		      \item \(
-		            \frac{1}{x-1}
+		      \item \( \frac{1}{x-1}
 		            = \frac{x+1}{x-2} -1
 		            \)
-		      \item \(
-		            (x + 2) \cdot (x- 2) = 21
+		      \item \( (x + 2) \cdot (x- 2) = 21
 		            \)
 
-		            Naja, die letzte Gleichung ist nicht linear in \(
-		            x
-		            \); wen das stört, der führt
-		            zwischendrin ein \(
-		            y := x^2
-		            \) ein\ldots
+		            Naja, die letzte Gleichung ist nicht linear in \( x \);
+		            wen das stört, der führt
+		            zwischendrin ein \( y := x^2 \) ein\ldots
 	      \end{enumerate}
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( 4 \cdot ( x - 1) = 5 \cdot (x - 2) \)
+
+		            \( 4x-4 = 5x - 10 \) \( | +4 | -4x \)
+
+		            \( 0 = x - 6 \)  \( | +6  \)
+
+		            \( 6 = x \)
+		      \item \( \frac{1}{x-1} = \frac{x+1}{x-2} -1 \)  \( | \cdot (x-1) \)
+
+		            \(  1 = \frac{ (x+1)(x-1) }{ x-2 } - (x - 1) \) \( | \cdot (x - 2) \)
+
+		            \( x - 2 = (x + 1)(x - 1) - (x - 1) (x - 2) \)
+
+		            \( x-2 = x^2 - 1 - x^2 -2x -x +2 \)
+
+		            \( x  = -3x -1  \) \( | -x  \)
+
+		            \( 0 = -4x -1  \) \( | +1 \)
+
+		            \( 1 = -4x \) \( | \div (-4) \)
+
+		            \( x = -\frac{1}{4} \)
+		      \item \( (x + 2) \cdot (x- 2) = 21 \)
+
+		            \( x^2 - 16 = 21 \) \( | +16 \)
+
+		            \( x^2 = 5  \) \( |\sqrt{} \)
+
+		            \( x_{1,2} = \pm \sqrt{5} \)
 	      \end{enumerate}
-	\item Leite die Lösungsformel \(
-	      x_{1,2} = - \frac{p}{2} \pm \sqrt{ \frac{p^2}{4} - q }
-	      \) der quadratischen Gleichung mit Hilfe der so genannten quadratischen Ergänzung her,
-	      d.h. bringe die Gleichung \(
-	      x^2 + px + q = 0
-	      \) erst in die Form \(
-	      (x + \alpha)^2 + \beta = 0
-	      \) und löse die Gleichung dann nach \(
-	      x
-	      \) auf.
+	\item Leite die Lösungsformel \( x_{1,2} = - \frac{p}{2} \pm \sqrt{ \frac{p^2}{4} - q } \)
+	      der quadratischen Gleichung mit Hilfe der so genannten quadratischen Ergänzung her,
+	      d.h. bringe die Gleichung \( x^2 + px + q = 0 \) erst in die Form
+	      \( (x + \alpha)^2 + \beta = 0 \) und löse die Gleichung dann nach \( x \) auf.
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( x^2 + px + q = 0 \)
+
+		            \( x^2 + px + \frac{p^2}{4} - \frac{p^2}{4} + q = 0\)
+
+		            \( (x + \frac{p}{2} )^2 - \frac{p^2}{4} + q = 0 \)  \( |+ \frac{p^2}{4} | - q \)
+
+		            \( (x + \frac{p}{2} )^2 = \frac{p^2}{4} - q \) \( |\sqrt{} \)
+
+		            \( x + \frac{p}{2} = \pm \sqrt{ \frac{p^2}{4} - q }\) \( |- \frac{p}{2} \)
+
+		            \( x_{1,2} = -\frac{p}{2} \pm \sqrt{ \frac{p^2}{4} - q }\) \( |- \frac{p}{2} \)
 	      \end{enumerate}
-	\item Gegeben sind die Punkte \(
-	      A(0|2), B(2|6)
-	      \) und \(
-	      C(-1|1.5)
-	      \).
+	\item Gegeben sind die Punkte \( A(0|2), B(2|6) \) und \( C(-1|1.5) \).
 	      \begin{enumerate}
-		      \item Konstruiere eine Funktion \(
-		            f(x) = ax^2 + bx + c
-		            \), so dass ihr Graph durch
+		      \item Konstruiere eine Funktion \( f(x) = ax^2 + bx + c \), so dass ihr Graph durch
 		            diese drei Punkte verläuft.
 		            Wie viele solcher Funktionen gibt es?
-		      \item Bestimme \(
-		            y_1
-		            \) und \(
-		            y_2
-		            \) so, dass die Punkte
-		            \(
-		            D(4|y_1)
-		            \) und \(
-		            E(-3|y_2)
-		            \) ebenfalls auf dem Graphen liegen!
+		      \item Bestimme \( y_1 \) und \( y_2 \) so, dass die Punkte
+		            \( D(4|y_1) \) und \( E(-3|y_2) \) ebenfalls auf dem Graphen liegen!
 	      \end{enumerate}
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Durch die \( 3 \) gegebenen Punkte können die \( 3 \) folgenden Funktionen
+		            definiert werden, durch welche die urspurüngliche Funktion \( f(x) \) eindeutig besimmt weden kann.
+		            \[ a \cdot 0^2 + b \cdot 0 + c = 2 \]
+		            \[ a \cdot 2^2 + b \cdot 2 + c = 6 \]
+		            \[ a \cdot (-1)^2 + b \cdot (-1) + c = 1.5 \]
+
+		            Diese Gleichungen können in ein LGS umgeschrieben und dann mit dem
+		            Gaus'schen Algroithmus gelöst werden.
+
+		            \( \begin{array}{ccc|c}
+			            0 & 0  & 1 & 2   \\
+			            4 & 2  & 1 & 6   \\
+			            1 & -1 & 1 & 1.5 \\
+		            \end{array}
+		            \rightarrow
+		            \begin{array}{ccc|c}
+			            1 & 0 & 0 & 0.5 \\
+			            0 & 1 & 0 & 1   \\
+			            0 & 0 & 1 & 2   \\
+		            \end{array} \)
+
+		            Es können nun die gelösten Parameter in die urspurüngliche Funktionsgleichung
+		            \( f(x) = ax^2 + bx + c \) eingesetzt werden.
+		            \[ f(x) = 0.5 x^2 + x + 2 \]
+
+		      \item \( f(4) = 0.5 \cdot 4^2 + 4 + 2 = 14  \Rightarrow D(4|14) \)
+
+		            \( f(-3) = 0.5 \cdot (-3)^2 -3 + 2 = 3.5  \Rightarrow E(-3|3.5) \)
 	      \end{enumerate}
-	\item Dividiere \(
-	      x^5 - x^4 + 2x^3 -2x2 -8x +8
-	      \) durch \(
-	      x^2 - 2
-	      \) und bestimme alle Nullstellen von \(
-	      x^5 - x^4 + 2x^3 - 2x^2 - 8x +8
-	      \).
+	\item Dividiere \( x^5 - x^4 + 2x^3 -2x2 -8x +8 \) durch \( x^2 - 2 \)
+	      und bestimme alle Nullstellen von \( x^5 - x^4 + 2x^3 - 2x^2 - 8x +8 \).
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( x^5 - x^4 + 2x^3 -2x2 -8x +8  \div (x^2 -2) = x^3 -x^2 + 4x +4 \)
+
+		            Es muss eine der Nullstellen der Funktion erraten werden \( (x_1=1) \).
+		            Diese kann dann abgespaltet werden.
+
+		            \(  x^5 - x^4 + 2x^3 -2x2 -8x +8 \div (x - 1) =  x^4 + 2x^2 - 8 \)
+
+		            Substitution mit \( x^2 = y \)
+
+		            \( y^2 + 2y - 8 = 0 \)
+
+		            \( y_{1,2} = -1 \pm \sqrt{ \frac{4}{4} + 8} \)
+
+		            \( y{1,2} = -1 \pm 3 \)
+
+		            \(  y_1 = -4 \lor y_2 = 2 \)
+
+		            Resubstitution mit \( y = x^2 \)
+		            \begin{multicols}{2}
+			            \begin{itemize}
+				            \item[] \( -4 = x^2  | \sqrt{} \)
+
+				                  \( x_{2,3} = \pm \sqrt{-4} \)
+				            \item[] \( 2 = x^2 | \sqrt{} \)
+
+				                  \( x_{4,5} = \pm \sqrt{2} \)
+			            \end{itemize}
+		            \end{multicols}
 	      \end{enumerate}
-	\item Berechne \(
-	      (\sum_{i = 0}^{n} x^i) \cdot ( x -1)
-	      \) und stelle damit eine geschlossene Formel (d.h. ohne Summenzeichen) zur Berechnung von \(
-	      \sum_{ i = 0}^{n} x^i
-	      \) für \(
-	      x \neq 1
-	      \) auf.
+	\item Berechne \( (\sum_{i = 0}^{n} x^i) \cdot ( x -1) \)
+	      und stelle damit eine geschlossene Formel (d.h. ohne Summenzeichen) zur Berechnung von
+	      \(\sum_{ i = 0}^{n} x^i \) für \( x \neq 1 \) auf.
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \sum_{i = 0}^{n} x^i \cdot (x - 1) \)
+
+		            \( = x \cdot \sum_{i = 0}^{n} x^i - \sum_{i = 0}^{n} x^i \)
+
+		            \( = x + x^2 + x^3 + \dots + x^{n+1} - (1 + x + x^2 + \dots + x^n) \)
+
+		            \( = -1 + x^{n+1} \)
+
+			\item \( \sum_{i = 0}^{n} x^i \cdot (x - 1) = x^{n+1} -1  | \div (x-1) \)
+
+		            \( \sum_{i = 0}^{n} x^i = \frac{ x^{n + 1} - 1 }{ x - 1 }  \)
 	      \end{enumerate}
 \end{enumerate}
 \end{document}
