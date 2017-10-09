@@ -1,18 +1,26 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[main.tex]{subfiles}
     \usepackage{amsmath}
     \usepackage{amsfonts}
     \usepackage{listings}
     
 \begin{document}
 \begin{enumerate}
-	\item  Was für partielle Ordnungen und was für totale Ordnungen gibt es
+	\item Was für partielle Ordnungen und was für totale Ordnungen gibt es
 	      auf zweielementigen Mengen \( \{x, y\} \)?
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item partielle Ordnung:
+
+		            \( R_1 = \{ (x,x), (y,y) \}  \)
+
+		            totale Ordnung:
+
+		            \( R_2 = \{ (x, x), (y, y), (x, y) \}  \)
+
+		            \( R_3 = \{ (x, x), (y, y), (y, x) \}  \)
 	      \end{enumerate}
-	\item Führe das im Beweis verwendete Sortierverfahren für die Menge \( A = \{ d,b,c,a,f,e \} \)
+	\item Führe das im Beweis verwendete Sortierverfahren für die Menge \( A = \{ d, b, c, a, f, e \} \)
 	      mit der alphabetischen Sortierung durch. Verwende als Pivotelement \( z \) immer
 	      das vorderste Element (am Anfang also \( d \)) und lasse die Reihenfolge der
 	      Elemente in \( A_1 \) und \( A_3 \) so, wie sie in \( A \) waren (also nicht beim Zerlegen aus
@@ -20,7 +28,9 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \[ A = \{ d, b, c, a, f, e \} \]
+		            \[ A_1 = \{b, c, a \}, d, A_2 = \{ f,e \} \]
+		            \[ A_3 = \{ a \}, b,  A_4 = \{ c \}, A_5\{ d \}, A_4 = \{ f \} \]
 	      \end{enumerate}
 	\item Beweise, dass die \( A_i \) aus dem Beweis in der Vorlesung paarweise disjunkt sind.
 
