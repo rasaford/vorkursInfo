@@ -115,8 +115,25 @@
 
 		            Somit muss auch das Paar \( (y,x) \in R^S \),
 		            denn wenn beim vorherigen \( xRy \) war muss nun \( yRx \) oder umgekehrt sein.
-		      \item
-		      \item
+		      \item Es ist zu zeigen, dass jede Relation in \( R^S \) auch in der symmetrischen Relation \( R' \)
+		            vorhanden ist. Somit ist \( R^S \) die kleinste symmetrische Relation, die \( R \) enthält.
+
+		            \( xR^Sy \stackrel{\text{Def.}}{=} yRy \lor yRx \)
+
+		            \( \stackrel{\tiny{R \subseteq R'}}{\Leftrightarrow} xR'y \lor yR'x \)
+
+		            \( \stackrel{\text{Symmetrie von } R'}{\Leftrightarrow} xR'y \lor xR'y \)
+
+		            \( \Leftrightarrow xR'y \)
+		      \item Die die Relation \( R^S \) ist transitiv, wenn \( R \) transitiv ist, da
+		            von \( R^S \) für eine transitive Relation
+		            \[ (xRy \land yRz) \Rightarrow xRz \]
+		            folgende Relationen hinzugfügt werden können:
+		            \[ yRx, zRy, zRx \]
+		            Diese bilden dann wieder eine transitive Relation
+		            \( (zRy \land yRx) \Rightarrow zRx \), welche genau "`umgekehrt"'
+		            zu der originalen transitiven Relation verläuft.
+
 	      \end{enumerate}
 	\item Gibt es Relationen, die sowohl reflexiv, aus auch asymmetrisch sind?
 	      (Vorsicht: genau hinsehen!)

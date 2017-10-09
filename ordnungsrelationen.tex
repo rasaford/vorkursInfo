@@ -30,13 +30,28 @@
 	      \begin{enumerate}
 		      \item \[ A = \{ d, b, c, a, f, e \} \]
 		            \[ A_1 = \{b, c, a \}, d, A_2 = \{ f,e \} \]
-		            \[ A_3 = \{ a \}, b,  A_4 = \{ c \}, A_5\{ d \}, A_4 = \{ f \} \]
+		            \[ A_3 = \{ a \}, b,  A_4 = \{ c \}, d, A_5\{ e \}, f, A_6 = \{\} \]
+		            \[ A_7 = \{a, b, c\}, d, A_8 = \{e,f\} \]
+		            \[ A = \{a, b, c, d, e, f\}  \]
 	      \end{enumerate}
 	\item Beweise, dass die \( A_i \) aus dem Beweis in der Vorlesung paarweise disjunkt sind.
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Die von dem Algorithmus erzeugen Teilmengen sind disjunkt.
+		            Die Elemente von \( A \) können in eine von \( 3 \) Mengen sortiert werden.
+		            \[ A_1 = \{ x \in A: xRz \land x \neq z \} \]
+		            \[ A_2 = \{ z \} \]
+		            \[ A_3 = \{ x \in A: zRx \land x \neq z \} \]
+		            Falls \( x = z \) kann durch die Definition der Mengen \( A_1, A_3 \) nur in
+		            die Menge \( A_2  \) sortiert werden.
+		            Falls \( x \neq z \) kann es in \textit{entweder} \( A_1 \) \textit{oder} \( A_2 \)
+		            sortiert werden, da auf den Elementen von \( A \) eine partielle Ordnung existiert und
+		            diese die Antisymmetrie fordert. Dadurch kann entweder \( xRy \) oder \( yRx \), aber \textit{nicht}
+		            \( xRy \land yRx \) existieren. Somit wird \( x \) in eine der beiden Mengen sortiert.
+
+		            Da \( A \) ebenfalls transitiv ist muss eine der beiden direkten Relationen zu \( x \)
+		            existieren.
 	      \end{enumerate}
 	\item Eine schöne Darstellung einer Relation \( m \) auf einer endlichen (und nicht zu
 	      großen) Menge \( A \) ist mittels einer Tabelle, bei der Zeilen und Spalten mit den
@@ -59,6 +74,50 @@
 	      Lösung:
 	      \begin{enumerate}
 		      \item
+		            \[
+			            \begin{array}{ c|c|c|c|c }
+				            x \subseteq y & \{\}   & \{ 1 \} & \{ 2 \} & \{ 1,2 \} \\
+				            \hline
+				            \{\}          & \times &         &         &           \\
+				            \hline
+				            \{1\}         & \times & \times  &         &           \\
+				            \hline
+				            \{2\}         & \times &         & \times  &           \\
+				            \hline
+				            \{1,2\}       & \times & \times  & \times  & \times    \\
+			            \end{array}
+		            \]
+		      \item
+		            \begin{itemize}
+			            \item Reflexivität:
+
+			                  Die Diagonale der Tabelle ist markiert.
+			            \item Totalität:
+
+			                  Wenn die Diagonale als Spiegelache betrachtet wird, muss auf mindestens
+			                  einder der beiden Seiten eins der beiden Felder markiert sein
+			            \item Antisymmetrie:
+
+			                  Bei der an der Diagonalen gespiegelten Tabelle ist höchstens eins
+			                  der beiden Felder markiert.
+		            \end{itemize}
+		      \item
+		            Ordnung: \( \leq \) auf den Natürlichen Zahlen
+		            \[
+			            \begin{array}{ c|c|c|c|c }
+				            x \leq y & 1      & 2      & 3      & 4      \\
+				            \hline
+				            1        & \times &        &        &        \\
+				            \hline
+				            2        & \times & \times &        &        \\
+				            \hline
+				            3        & \times & \times & \times &        \\
+				            \hline
+				            4        & \times & \times & \times & \times \\
+			            \end{array}
+		            \]
+		            Es sind alle Felder unter der Diagonalen markiert, da die Ordnung reflexiv, total (transitiv) und
+		            antisymmetrisch ist.
 	      \end{enumerate}
 	\item  Für eine endliche Menge \( A \) sei jedes Element \( x \in A \) mit einer Rangziffer
 	      \( r(x) \in \mathbb{N} \) versehen. Wir betrachten die Relation \( R \) auf \( A \) mit
@@ -71,7 +130,17 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Da \( r(x) \in \mathbb{N} \) und die Relation \( \leq \) auf \( \mathbb{N} \)
+		            eine totale Ordnung bildet ist \( r(x) \leq r(y) \) transitiv, reflexiv und total.
+
+		            Da \( R  \) durch diese definiert wird, hat \( R \) auch diese Eingenschaften.
+
+		      \item Wenn alle Beschriftungen für die verschiedenen Elemente von \( A \) unterschiedlich
+		            sind, ist \( R \) antisymmetrisch.
+		            \[ \forall x,y \in A: r(x) \neq r(y) \]
+		            Dann gilt für jedes \( x,y \in A \) \textit{entweder} \( xRy \)
+		            \textit{oder} \( yRx \).
+		            \[ \forall x,y \in \mathbb{N}, x \neq y: x \leq y \oplus x \leq y \]
 	      \end{enumerate}
 	\item Wenn man für eine endliche Menge \( A \) mit \( n = |A| \) Elementen nur eine
 	      partielle Ordnung hat, funktioniert das Sortieren nicht. (Warum nicht?)
@@ -89,7 +158,18 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Es wird \( A \) mit \( R \) topologisch sortiert. Dadurch erhält man
+		            \[ A = \{x_1, x_2, \dots, x_n\} \]
+		            Wenn man nun jedem \( x \in A \) eine Rangziffer, die dem Index in
+		            \( A \) entspricht zuweist entsteht somit nach der vorherigen Aufgabe
+		            eine totale Ordnung auf diesen. (\( r(x_i) \in \mathbb{N} \))
+		            \[ r(x_1) = 1, r(x_2) = 2, \dots, r(x_n) = n \]
+		            Nun ist noch zu zeigen, dass \( R \subseteq R' \)
+
+		            \( xRy \Rightarrow r(x) \leq r(y) \stackrel{\text{def. von } R'}{\Rightarrow} xR'y \)
+
+		            Dies ist der Fall, da \( R' \) als totale Ordnung definiert ist:
+		            \[ \forall i,j \in \{ 1 \dots n\} : i \leq j \Leftrightarrow x_iRx_j \]
 	      \end{enumerate}
 \end{enumerate}
 \end{document}
