@@ -10,7 +10,16 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Fläche des Rechtecks:
+		            \( a \cdot b = 10 cm^2 | \div b\)
+
+		            \( a = \frac{10 cm^2}{b} \)
+
+		            Umfang des Rechtecks:
+		            \( u = 2(a + b)
+		            = 2 ( b + \frac{10 cm^2}{b} ) \)
+
+		            \[ f: \mathbb{R} \rightarrow \mathbb{R}; b \mapsto 2 \cdot \Big( b + \frac{10 cm^2}{b} \Big)  \]
 	      \end{enumerate}
 	\item  Gib (z.B. als Tabelle) die Und-Verknüpfung als Abbildung \( \mathbb{B} \times \mathbb{B} \rightarrow \mathbb{B} \) an,
 	      wobei \( \mathbb{B} := \{ ture, false \} \) die Menge der Wahrheitswerte sei.
@@ -18,14 +27,36 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \[
+			            \begin{array}{c|c|c}
+				            \land & true  & false \\
+				            \hline
+				            true  & true  & false \\
+				            \hline
+				            false & false & false \\
+			            \end{array}
+		            \]
+
+		            Die und-Verknüpfung ist nicht injektiv, da:
+
+		            \( f^{-1}(false) = \{\{false, true\}, \{ture, false\}, \{false, false\}\} \)
+
+		            Sie ist aber surjektiv.
 	      \end{enumerate}
 	\item Existieren Abbildungen, die weder surjektiv noch injektiv sind?
 	      Gib gegebenenfalls solche Abbildungen an und veranschauliche sie anhand einer Skizze.
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( f: \mathbb{R} \rightarrow \mathbb{R}; x \mapsto \sqrt{x} \)
+
+		            Nicht injektiv, da:
+
+		            \( f^{-1}(5) = \{25, -25\} \)
+
+		            Nicht surjektiv, da:
+
+		            \( f^{-1}(-1) = \emptyset \)
 	      \end{enumerate}
 	\item Prüfe die folgenden Funktionen auf Injektivität und Surjektivität:
 	      \begin{enumerate}
@@ -37,7 +68,26 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( f: \mathbb{Z} \rightarrow \mathbb{N}_0 ; x \mapsto x^2 \)
+
+		            nicht injektiv: \( f^{-1}(25) = \{-5, 5\} \)
+
+		            nicht surjektiv: \( f^{-1}(2) = \sqrt{2} \notin \mathbb{Z} \)
+		      \item \( f: \mathbb{N}_0 \rightarrow \mathbb{N}_0 ; x \mapsto x^2 \)
+
+		            injektiv
+
+		            nicht surjektiv: \( f^{-1}(2) = \sqrt{2} \notin \mathbb{Z} \)
+		      \item \( f: \mathbb{N} \rightarrow \mathbb{N}; 1 \mapsto 1, x \mapsto x - 1 \) für \( x > 1 \)
+
+		            nicht injektiv: \( f^{-1}(1) = \{1,2\} \)
+
+		            surjektiv
+		      \item \( f: \mathbb{Z} \rightarrow \mathbb{Z}; x \mapsto x - 1 \)
+
+		            injektiv
+
+		            surjektiv
 	      \end{enumerate}
 	\item Gib jeweils zwei Funktionen von \( \mathbb{N} \) nach \( \mathbb{N} \) an, die
 	      \begin{enumerate}
@@ -47,13 +97,25 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( f:\mathbb{N} \rightarrow \mathbb{N}; x \mapsto x + 1 \)
+
+		            \( f:\mathbb{N} \rightarrow \mathbb{N}; x \mapsto 2x \)
+
+		      \item \( f:\mathbb{N} \rightarrow \mathbb{N}; x \mapsto x \)
+
+		            \( f:\mathbb{N} \rightarrow \mathbb{N}; x \mapsto x + 1 \) für \( x \) gerade,
+		            \( x - 1 \) für \( x \) ungerade
+
 	      \end{enumerate}
 	\item Gib eine bijektive Abbildung \( f: \mathbb{N}_0 \rightarrow Z \) an.
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( f: \mathbb{N}_0 \rightarrow \mathbb{Z}; 0 \mapsto 0, \)
+
+		            \hspace{52pt}\( x \mapsto \frac{x}{2} \) für \( x \) gerade,
+
+		            \hspace{52pt}\( x \mapsto - \frac{x + 1}{2} \) für \( x \) ungerade
 	      \end{enumerate}
 	\item Ordnet man jedem auftretenden Funktionswert \( y \) einer Abbildung  \( f: A \rightarrow B \)
 	      die Elemente seiner Urbildmenge \( f^{-1}(y) \) zu, so erhält man eine Relation.

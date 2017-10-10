@@ -1,52 +1,109 @@
 \documentclass[main.tex]{subfiles}
     \usepackage{amsmath}
     \usepackage{listings}
-    \usepackage{amsfonts}
+	\usepackage{amsfonts}
+	\usepackage{multicol}
     
 \begin{document}
 \begin{enumerate}
 	\item Berechne die ersten Partialsummen der Reihe mit Gliedern \( s_n = \frac{9}{10^n} \) und
-          bestimme deren kleinste obere Schranke. 
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+	      bestimme deren kleinste obere Schranke.
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item Die Partialsumme der Reihenglieder ist:
+		            \[ \sum_{i = 1}^{n} \frac{9}{10^i}  = \frac{10^n - 1}{10^n}\]
+		            \( \sum_{i = 1}^{1} \frac{9}{10^i} = \frac{9}{10} \)
+
+		            \( \sum_{i = 1}^{2} \frac{9}{10^i} =\frac{9}{10} + \frac{9}{100} = \frac{99}{100} \)
+
+		            \( \sum_{i = 1}^{3} \frac{9}{10^i} = \frac{9}{10} + \frac{9}{100} + \frac{9}{1000} = \frac{999}{1000} \)
+
+		            Im Grenzwert für \( n \to \infty \) konvergiert diese Summe gegen \( 1 \)
+
+		            \[ \lim_{n \to \infty} \frac{10^n - 1}{10^n}
+			            = \lim_{n \to \infty} \Big( \frac{10^n}{10^n} - \frac{1}{10^n} \Big)
+			            = \lim_{n \to \infty} \Big( 1 - \frac{1}{10^n} \Big) = 1\]
+	      \end{enumerate}
 	\item Gib eine Bedingung an die Reihenglieder \( s_k \) an, wann eine Reihe \( f_n = \sum s_k \)
 	      streng monoton wachsend bzw. fallend ist (im Fall einer Reihe beziehen sich
 	      Attribute wie ”monoton wachsend“ auf die Partialsummen, nicht auf die
 	      Reihenglieder).
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item Es müssen alle \( s_k > 0 \) sein damit \( f_n \) streng monoton wachsend ist.
+		            Wenn alle \( s_k < 0 \) ist die Folge streng monoton fallend.
+	      \end{enumerate}
 	\item Zeige für \( 0 < x < 1  \) ist die \textit{geometrische Reihe}
 	      \[ f_n := \sum_{k = 0}^{n} x^k \]
 
 	      beschränkt und monoton, mithin konvergent. Was ist der Grenzwert der Reihe?
 	      (Tipp: Die Summe kennen wir schon\dots )
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item Jeder Term der Partialialsumme ist \(  > 0 \). Somit ist die Folge der Partialsummen
+		            streng monoton wachsend. Sie konvergiert gegen :
+		            \[ \sum_{i = 0}^{n} x^i = \frac{x^{n+1} - 1}{x - 1} \]
+
+		      \item Konvergenz von \( f_n \)
+	      \end{enumerate}
 	\item Zeige, dass die harmonische Reihe mit Reihengliedern \( s_n := \frac{1}{n} \) keine obere
 	      Schranke besitzt (die Partialsummen also beliebig groß werden).
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item
+		            \( \sum_{i = 0}^{\infty} \frac{1}{i} \)
+
+		            \( = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6}  + \frac{1}{7}  + \frac{1}{8}  + \frac{1}{9} +  \dots \)
+
+		            \( > 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{4} + \frac{1}{8} + \frac{1}{8}  + \frac{1}{8} + \frac{1}{8}  + \frac{1}{16}+ \dots \)
+
+		            \( = 1 + \frac{1}{2} + \frac{1}{2} + \frac{1}{2} + \dots \)
+
+		            \( = 1 + \sum_{i = 0}^{\infty} \frac{1}{2} \Rightarrow \) nicht konvergent
+	      \end{enumerate}
 	\item Zeige, dass eine Folge höchstens einen Grenzwert besitzen kann!
 	      Nimm dazu an, es gebe \( y_1 \neq y_2 \), die beide die Grenzwertbedingung erfüllen und
 	      führe das zum Widerspruch durch Angabe eines \( \epsilon \), mit dem die weitere Bedingung
 	      unmöglich erfüllt sein kann.
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item Widerspruchsbeweis:
+
+		            Annahme: Die Folge \( f_n \) hat die Grenzwerte \( y_1, y_2 \) mit \( y_1 \neq y_2 \)
+
+		            Nach der Definition des Grenzwerts einer Folge muss somit gelten:
+		            \[ \forall \epsilon > 0: \exists n_0(\epsilon) \in \mathbb{N}: n \geq n_0(\epsilon) \Rightarrow |f_n - y_1| < \epsilon \]
+		            \[ \forall \epsilon > 0: \exists n_1(\epsilon) \in \mathbb{N}: n \geq n_0(\epsilon) \Rightarrow |f_n - y_2| < \epsilon \]
+
+		            Da die Grenzwerte unterschiedlich sind, wird \( \epsilon \) (Radius um den Grenzwert, in dem unendlich viele Punkte liegen müssen)
+		            so gewählt, dass es kleiner als die hälfte der Distanz von \( y_1, y_2 \) auf dem Zahlenstrahl.
+		            \[ \epsilon < \frac{|y_1 - y_2|}{2} \]
+		            Somit müssen die Mengen der Punkte, die in den \( \epsilon \)- Umgebungen von \( y_1, y_2 \) liegen disjunkt sein.
+
+		            Es wird nun \( N := \max\{n_0, n_1\} \) gewählt. Somit sind alle Glieder der Folge \( f_n \)  für beide Grenzwerte innerhalb
+		            der gegebenen \( \epsilon  \)-Umgebung.
+		            \[ |f_n - y_1| + |f_n - y_2| < \epsilon + \epsilon = 2\epsilon \]
+
+		            \( 2\epsilon =  2 \cdot \frac{|y_1 - y_2|}{2} = |y_1 - y_2|\)
+
+		            \( |y_1 - f_n + f_n - y_2| \)
+
+		            \( |(y_1 - f_n) + (f_n - y_2)| \)
+
+		            \( \stackrel{\text{Dreiecksungleichung}}{\leq} |y_1 -f_n| + |f_n - y_2| \)
+
+		            \( |f_n - y_1| + |f_n - y_2| \)
+
+		            Somit ergibt sich der folgende Widerspruch. Die Annahme muss also falsch sein.
+					\[ 2 \epsilon \leq  |f_n - y_1| + |f_n - y_2| < 2 \epsilon \]
+					
+					\( \square \)
+	      \end{enumerate}
 	\item Ein Mann spaziert mit seinem Hund von seinem Haus zu einer Kneipe. Die
 	      Entfernung zwischen Haus und Kneipe sei \( s \). Der Mann gehe dabei mit der
 	      Geschwindigkeit \( v \). Dies ist dem Hund jedoch zu langweilig. Er läuft deswegen
@@ -58,21 +115,31 @@
 	      Berechne, welchen Weg der Hund zurücklegt, bis Herrchen und Hund gemeinsam die Kneipe erreichen.
 	      Es gibt einen so genannten ”Mathematiker-Weg“ und einen so genannten
 	      ”Physiker-Weg“. Versuche, beide zu finden.
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item Mathematiker Weg:
+
+		            Da der Hund doppelt so schnell läuft wie der Mann und umdreht, sobald sich die Beiden treffen, legt er
+		            folgende Strecke zurück:
+
+		            \( 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \dots = \sum_{i = 0}^{\infty} \frac{1}{2^i}\)
+
+		            \( = \frac{1}{1 - \frac{1}{2}} = 2  \)
+		      \item Physiker Weg:
+
+		            Da der Hund sich in der gleichen Zeit doppelt so schnell bewegt, wie der Mann, legt der die doppelte Strecke zurück.
+	      \end{enumerate}
 	\item  In Aufgabe \( 2.7 \) haben wir die Länge der Kochkurve zu berechnet, was uns auf
 	      eine Folge \( (l_n) \) von Zahlen führt. Ebenso kann man die Fläche \( (a_n) \) unter der
 	      Kochkurve berechnen, indem man die Flächen der Dreiecke aufaddiert, die
 	      Schritt fur Schritt auf die Kurve ”draufgesetzt“ werden.
 	      Sind diese Folgen jeweils beschränkt und/oder monoton?
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item
+	      \end{enumerate}
 	\item Gib Folgen \( (a_n) \), \( (b_n) \) an mit \( \lim_{n \to \infty}(a_n) = \infty \),
 	      \( \lim_{n \to \infty}(b_n) = \infty \) sowie:
 	      \begin{enumerate}
@@ -80,11 +147,19 @@
 		      \item \( \lim(a_n - b_n) = + \infty \)
 		      \item \( \lim( \frac{a_n}{b_n}) = 0 \)
 	      \end{enumerate}
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item \( a_n = n, b_n = n \)
+
+		            \( \lim_{n \to \infty} (n - n) = 0 \)
+		      \item \( a_n = 2n, b_n = n \)
+
+		            \( \lim_{n \to \infty} (2n - n) = \lim_{n \to \infty} n = \infty \)
+		      \item \( a_n = n, b_n = n^2 \)
+
+		            \( \lim_{n \to \infty} \frac{n}{n^2} = \lim_{n \to \infty} \frac{1}{n} = 0  \)
+	      \end{enumerate}
 	\item \( O \)- Notation: zeig, dass gilt:
 	      \begin{enumerate}
 		      \item \( 6n^4  \in O(3n^4) \)
@@ -93,19 +168,19 @@
 	      \end{enumerate}
 	      Gib im Fall von "`\( \in \)"' ein entsprechendes \( n_0 \) an, so dass Bedingung
 	      (8.1) erfüllt ist.
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item
+	      \end{enumerate}
 	\item Bestmme alle Häufungspunkte und den größten Häufungspunkt von
 	      \[ a_n = \sin \Big( \frac{\pi}{4}n \Big) \]
 	      (Benutze dabei die Gleichheit \( \sin( \pi / 4 ) = \sqrt{2} / 2 \)).
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item
+	      \end{enumerate}
 	\item Prüfe jeweils auf Konvergenz und bestimme ggf. den Grenzwert.
 
 	      Hinweis: Wenn \( \lim_{n \to \infty} a_n = \alpha \) und
@@ -120,10 +195,22 @@
 		      \item \( b_n = \frac{ nx^n }{ nx^n + 1 } \)
 		            \( x \in \mathbb{R}, x > 1 \)
 	      \end{enumerate}
-          
-          Lösung:
-          \begin{enumerate}
-              \item 
-          \end{enumerate}
+
+	      Lösung:
+	      \begin{enumerate}
+		      \item \( lim_{n \to \infty} a_n
+		            = \lim_{n \to \infty} \frac{3n + 2(-1)^n}{n} \)
+
+		            \( = \lim_{n \to \infty} \Big( \frac{3n}{n} + \frac{2(-1)^n}{n} \Big) \)
+
+		            \( = \lim_{n \to \infty} \Big( 3 + \frac{2(-1)^n}{n} \Big) = 3 \)
+		      \item \( \lim_{n \to \infty} b_n
+		            = \lim_{n \to \infty} \frac{ nx^n }{ nx^n + 1 } \)
+
+		            \( = \lim_{n \to \infty} \Big( \frac{ \frac{nx^n}{nx^n} }{ \frac{nx^n + 1}{ nx^n} }  \Big) \)
+
+		            \( = \lim_{n \to \infty} \Big( \frac{1}{ 1 + \frac{1}{ nx^n} }  \Big) = 0 \)
+
+	      \end{enumerate}
 \end{enumerate}
 \end{document}

@@ -25,9 +25,19 @@
 	      \end{multicols}
 
 	      Lösung:
-	      \begin{enumerate}
-		      \item
-	      \end{enumerate}
+	      \begin{multicols}{2}
+		      \begin{enumerate}
+			      \item \(A \cup B = \{ 1,3,5,7,9,2,4,6,8,10 \} \)
+			      \item \(A \cap B = \{ \}\)
+			      \item \(A \setminus B = \{ 1,3,5,7,9 \} \)
+			      \item \(A \setminus D = \{ 1, 3 \}\)
+			      \item \(B \setminus D = \{ 2, 4 \}\)
+			      \item \(D \setminus A = \{ 6, 8, 10 \}\)
+			      \item \(D \setminus B = \{ 5, 7, 9 \}\)
+			      \item \(D \setminus(A \cup B) = \{ \} \)
+			      \item \(D \setminus(A \cap B) = \{ 5,6,7,8,9,10 \} \)
+		      \end{enumerate}
+	      \end{multicols}
 	\item Wie viele Elemente enthält die Potenzmenge \( \mathcal{P}(A) \) einer (endlichen)
 	      Menge \(A \) mit \( |A| = n \)? Schreibe z.B. alle Teilmengen von \( \{1,2\} \) oder
 	      \( \{1,2,3\} \) auf, und versuche eine Regelmäßigkeit zu erkennen.
@@ -36,7 +46,12 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \mathcal{P}(\{ 1, 2 \}) = \{ \{\},  \{1\}, \{2 \}, \{1,2\} \} \)
+		      \item \( \mathcal{P}(\{ 1, 2, 3\}) = \{ \{\},  \{1\}, \{2 \}, \{3 \}, \{1,2\} , \{2,3\} , \{1,3\}, \{1,2,3\} \} \)
+		      \item Die Potenzmenge \( \mathcal{P}(A) \) hat \( 2^n \) Elemente, denn für jedes
+		            der \( n \) Elemente von \( A \) kann entschieden werden, ob dieses in der Relation
+		            enthalten ist, oder nicht.
+		      \item Beweis mit vollständiger Induktion  (Induktionsanfang \( n = 0 \))
 	      \end{enumerate}
 	\item Bestimme die folgenden Mächtigkeiten:
 	      \begin{multicols}{2}
@@ -48,9 +63,14 @@
 		      \end{enumerate}
 	      \end{multicols}
 	      Lösung:
-	      \begin{enumerate}
-		      \item
-	      \end{enumerate}
+	      \begin{multicols}{2}
+		      \begin{enumerate}
+			      \item \( |\{1, 4, ,6 \}|  = 3\)
+			      \item \( |\emptyset| = 0 \)
+			      \item \( |\{ \emptyset \}| = 1 \)
+			      \item \( |\{ \emptyset, \{ 1, 2 ,3 \} \}| = 2 \)
+		      \end{enumerate}
+	      \end{multicols}
 	\item Zeichne Punktmengen \( A, B \) und \( C \), die die folgenden vier Bedingungen
 	      zugleich erfüllen:
 	      \begin{multicols}{2}
@@ -65,9 +85,14 @@
 	      Bedingungen erfüllen.
 
 	      Lösung:
-	      \begin{enumerate}
-		      \item
-	      \end{enumerate}
+	      \begin{multicols}{2}
+		      \begin{enumerate}
+			      \item \( A \cap B \cap C = \emptyset = \{\} \)
+			      \item \( A \cap B \neq \emptyset = \{\} \)
+			      \item \( B \cap C \neq \emptyset = \{\} \)
+			      \item \( A \cap C \neq \emptyset = \{\} \)
+		      \end{enumerate}
+	      \end{multicols}
 	\item \( A, B \) und \( C \) seien Teilmengen einer Grundmenge \( G \).
 	      Beweise von den folgenden Aussagen die wahren und gib für die falschen jeweils ein Gegenbeispiel an.
 	      \begin{enumerate}
@@ -89,7 +114,8 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \subseteq \)
+		      \item \( \supseteq \)
 	      \end{enumerate}
 	\item Die \( 30 \) Schüler einer Klasse schrieben in den drei Fächern
 	      Deutsch, Englisch und Mathematik Prüfungsarbeiten mit folgendem Ergebnis:
@@ -119,7 +145,9 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+			\item 
+			\[ V_i = \bigcup_{k = 0}^{\infty} \{i \cdot k\} \]
+			\[ prim = \mathbb{N} \setminus (V_2 \cup V_3 \cup V_5 \cup V_7 \cup \dots \cup V_\infty)  \]
 	      \end{enumerate}
 \end{enumerate}
 \end{document}
