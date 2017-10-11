@@ -9,7 +9,9 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \binom{n}{n-k}
+		            = \frac{n!}{(n-k)! (n - (n -k))!}
+		            = \frac{n!}{(n - k)! k!} \)
 	      \end{enumerate}
 	\item Bei der Strich- Sternmalerei hätten wir auch mit Sternen anfangen können
 	      und \( n - 1 \) davon durch Striche ersetzen. Stelle eine Formel für die Anzahl der Möglichkeiten hierfur auf!
@@ -21,7 +23,9 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \binom{n + k -1}{n-1}
+		            = \binom{n + k -1}{(n + k - 1)- (n-1)}
+		            = \binom{n + k -1}{k}\)
 	      \end{enumerate}
 	\item Zeige:
 	      \[ \binom{n}{k} + \binom{n}{ k + 1} = \binom{n + 1}{k + 1} \]
@@ -31,15 +35,33 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \binom{n}{k} + \binom{n}{k + 1}
+		            = \frac{n!}{k! (n-k)!} + \frac{n!}{(k+1)! (n - (k +1))!} \)
+
+		            \( =  \frac{n!(k+1)}{(k+1)! (n-k)!} + \frac{n! (n - k)}{(k+1)! (n - k)!} \)
+
+		            \( =  \frac{n!(k+1) + n!(n-k)}{(k+1)! (n - k)!} \)
+
+		            \( =  \frac{n!(k+1 + n-k)}{(k+1)! (n - k)!} \)
+
+		            \( =  \frac{n!(n + 1)}{(k+1)! (n - k)!} \)
+
+		            \( =  \frac{(n + 1)!}{(k+1)! (n - k)!} \)
+
+		            \( = \binom{n+1}{k+1} \)
 	      \end{enumerate}
 	\item  Gib die Koeffizienten des Polynoms \( (1 + x)^n \) mittels Binomialkoeffizienten
 	      an und zeige durch geschickes Verwenden dieser Formel
 	      \[ \sum_{ k= 0}^{n} \binom{n}{k} = 2^n, n > 0, \sum_{k = 0}^{n} (-1)^k \binom{n}{k} = 0 \]
 
 	      Lösung:
+	      \[ (a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} \cdot b^k \]
 	      \begin{enumerate}
-		      \item
+		      \item \( (1+1)^n = \sum_{k = 0}^{n} \binom{n}{k} 1^{n-k} \cdot 1^k
+		            = \sum_{k = 0}^{n} \binom{n}{k} \)
+		      \item \( (1-1)^n = \sum_{k = 0}^{n} \binom{n}{k} 1^{n-k} \cdot (-1)^k
+		            = \sum_{k = 0}^{n} \binom{n}{k} (-1)^k \)
+
 	      \end{enumerate}
 	\item Wie viele verschiedene Möglichkeiten zu tippen hat man beim klassischen
 	      Lotto ” \( 6 \) aus \( 49 \)" (Berechnen mit Taschenrechner oder per Hand mit Runden
@@ -47,7 +69,7 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( \binom{49}{6} = 13983816 \)
 	      \end{enumerate}
 	\item Wie viele verschiedene Möglichkeiten gibt es beim Fußball-Toto?
 	      (13 Spiele sind zu tippen, jeweils Heimsieg, Heimniederlage oder Unentschieden –
@@ -55,7 +77,7 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( 3^{13} = 1594323 \)
 	      \end{enumerate}
 	\item Wieviele mögliche Ergebnisse gibt es beim Würfeln mit \( n \) nicht unterscheidbaren
 	      Würfeln (Ergebnis sind dabei die Punkte der einzelnen Würfel,
@@ -63,14 +85,22 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \( 6^n \)
 	      \end{enumerate}
 	\item Wie viele verschiedene ”Full House“ gibt es beim Poker?
 	      (\( 52 \) Karten, vier Farben mit je \( 2,3,4, \dots, 10 \), Bube, Dame, König, As)
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Beim Full House muss zuerst einen Symbol ausgewählt werden.
+		            Für dieses gibt es \( \binom{13}{1} \) Möglichkeiten. Von diesem müssen dann
+		            \( 3 \) der \( 4 \) Karten ohne Zurücklegen gezogen werden \( \binom{4}{3} \).
+		            Dann wird ein weiteres Symbol, welches ungleich dem vorherigen sein muss gezogen.
+		            Dies besitzt \( \binom{12}{1} \) Möglichkeiten. Von diesem werden dann \( 2 \) Karten benötigt.
+
+		            Somit ergibt sich:
+		            \[ \binom{13}{1} \cdot \binom{4}{3} \cdot \binom{12}{1} \cdot \binom{4}{2}
+			            = 3744 \]
 	      \end{enumerate}
 	\item Wie viele Anagramme (Wörter, die aus denselben Buchstaben bestehen – es
 	      geht nur um die möglichen Buchstabenvertauschungen, aussprechen können
@@ -78,9 +108,16 @@
 	      unterschieden) gibt es von dem Wort \textit{Muh}? Wie viele Anagramme gibt es
 	      von \textit{Atlantis} und wie viele von \textit{Mississippi}?
 
-	      Lösung:
+		Lösung:
+		
+		Die Anzahl der möglichen Permutationen einer Menge beträgt \( n! \). 
+		Wenn aber \( k \) gleiche Elemente in dieser enthalten sind, beträgt die 
+		Zahl der unterschiedlichen Permutationen \( \frac{n!}{k!} \), denn 
+		\( k! \) Permutationen sind gleich. 
 	      \begin{enumerate}
-		      \item
+		      \item Muh: \( 3! \)
+		      \item Atlantis: \( \frac{8!}{4!} = 8 \cdot 7 \cdot 6 \cdot 5 = 1680 \)
+		      \item Mississippi: \( \frac{11!}{10!} = 11 \)
 	      \end{enumerate}
 \end{enumerate}
 \end{document}
