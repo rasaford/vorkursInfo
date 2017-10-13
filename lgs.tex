@@ -2,6 +2,7 @@
     \usepackage{amsmath}
     \usepackage{listings} 
     \usepackage{amsfonts}
+    \usepackage{multicol}
 
 \begin{document}
 \begin{enumerate}
@@ -21,6 +22,22 @@
 	      Lösung:
 	      \begin{enumerate}
 		      \item
+		      \item \[ \begin{pmatrix}
+				            -1 & 2 & 2 \\
+				            0  & 1 & 2 \\
+			            \end{pmatrix} \]
+		      \item
+		      \item  \[
+			            \begin{pmatrix}
+				            -1 & 2  & 2 \\
+				            2  & -1 & 2 \\
+			            \end{pmatrix}
+			            \rightsquigarrow
+			            \begin{pmatrix}
+				            1 & 0 & 2 \\
+				            0 & 1 & 2 \\
+			            \end{pmatrix}
+		            \]
 	      \end{enumerate}
 	\item Löse das lineare Gleichungsystem
 	      \[ \begin{array}{cccccc}
@@ -32,7 +49,21 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \[
+			            \begin{pmatrix}
+				            2  & 2 & -1 & -2 & -1 \\
+				            4  & 4 & -3 & -1 & 5  \\
+				            0  & 3 & 1  & 1  & 1  \\
+				            -2 & 4 & 4  & 2  & -2 \\
+			            \end{pmatrix}
+			            \rightsquigarrow
+			            \begin{pmatrix}
+				            1 & 0 & 0 & 0 & 1  \\
+				            0 & 1 & 0 & 0 & 0  \\
+				            0 & 0 & 1 & 0 & -1 \\
+				            0 & 0 & 0 & 1 & 2  \\
+			            \end{pmatrix}
+		            \]
 	      \end{enumerate}
 	\item Das Lösen eines LGS nach dieser Methode benötigt bei \( n \) Unbekannten etwa
 	      \( n^3/3 \) Operationen (Additionen und Multiplikationen). Angenommen, unser
@@ -41,7 +72,14 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item Allgemeine Formel für \( n \) Unbekannte
+		            \[ t(n) := \frac{n^3}{3} \cdot \frac{1}{100 \cdot 10^6} s
+			            = \frac{n^3 }{3 \cdot 10^{8}}  s\]
+		            \[ \begin{array}{ccccc}
+				              & 10         & 100     & 1 000    & 100 000            \\
+				            \hline
+				            t & 3.33 \mu s & 3.33 ms & 3.33 sec & 38.58 \text{ Tage} \\
+			            \end{array} \]
 	      \end{enumerate}
 	\item Für eine Matrix \( A \in \mathbb{R}^{ r \times s } \) (d.h. \( r \) Zeilen und \( s \)
 	      Spalten, Koeffizienten aus
@@ -67,7 +105,32 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \[
+			            \begin{pmatrix}
+				            2  & 2 & -1 & -2 \\
+				            4  & 4 & -3 & -1 \\
+				            0  & 3 & 1  & 1  \\
+				            -2 & 4 & 4  & 2  \\
+			            \end{pmatrix}
+			            \cdot \begin{pmatrix}
+				            1  \\
+				            0  \\
+				            -1 \\
+				            2  \\
+			            \end{pmatrix}
+			            = \begin{pmatrix}
+				            2 + 1 -4   \\
+				            4 + 3 -2   \\
+				            -1 + 2     \\
+				            -2 + 4 + 4 \\
+			            \end{pmatrix}
+			            = \begin{pmatrix}
+				            -1 \\
+				            5  \\
+				            1  \\
+				            -2 \\
+			            \end{pmatrix}
+		            \]
 	      \end{enumerate}
 	\item für welche Werte von \( a \) ist folgendes LGS lösbar?
 	      Was sind dann die Lösungen?
@@ -79,7 +142,34 @@
 
 	      Lösung:
 	      \begin{enumerate}
-		      \item
+		      \item \[
+			            \begin{pmatrix}
+				            1  & 2  & 1  & 2 \\
+				            1  & 4  & 3  & 4 \\
+				            -2 & -3 & -1 & a \\
+			            \end{pmatrix}
+			            \rightsquigarrow
+			            \begin{pmatrix}
+				            1 & 1 & 0 & -a-2 \\
+				            0 & 1 & 1 & 1    \\
+				            0 & 0 & 0 & a+3  \\
+			            \end{pmatrix}
+		            \]
+		            \begin{multicols}{3}
+			            \begin{itemize}
+						\item[] \( 0 + 0 + 0 = a + 3 \)
+						\( a = -3 \)
+
+				            \item[] \( x_2 + x_3 = 1 | -x_3 \)
+
+				                  \( x_2 = 1 - x_3 \)
+				            \item[] \( x_1 + x_2 = 1 \)
+
+				                  \( x_1 + (1-x_3) = 1 \)
+
+				                  \( x_1 = x_3 \)
+			            \end{itemize}
+		            \end{multicols}
 	      \end{enumerate}
 \end{enumerate}
 \end{document}
